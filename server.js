@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const app = express();
 app.use(express.static('public'));
-const port = 3000;
+const port = 80;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect('mongodb+srv://Cluster98117:37akbBZb4LFbUosP@cluster98117.pteb4fk.mongodb.net/Demo', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
